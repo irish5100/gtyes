@@ -1,0 +1,86 @@
+RequiredRole: "@everyone"
+# Required Role to run -boosting
+# Leave it as @everyone if you dont want the NoPermission Embed to be send
+ServerBoostingRole: server booster
+Multiplier: 1.5
+GivenRoles:
+  - "734254514684690493"
+TakenRoles:
+  - "734254514684690493"
+NotificationChannel: announcements
+DmUserWhenBoostingEnds: false
+AnnounceWhenBoostingEnds: true
+AdvancedStatsBonus: true
+# If you have advancedStats and this is true
+# You will be able to use the the following placeholders
+# {boosting-length} {boosting-start} {earned-coins}
+Commands:
+  Boosting:
+    RequiredRole: "@everyone"
+    Name: boosting
+    Description: View a users boosting stats
+    Usage: boosting <user>
+    Aliases: []
+    type: fun
+Embeds:
+  NoPermission:
+    ReturnAfterMessage: false
+    # Should the bot return 
+    # after the bot sends this embed?
+    # It will send 2 messages if false
+    Author: You dont have access to enter the booster portal
+    AuthorIcon: https://cdn.discordapp.com/attachments/733403799355523122/788194365176414228/NitroDot.gif
+    Description: >-
+      This feature is reserved for <@&743191960025825344>
+
+      If you are interested in being able to access the booster portal you can do so by boosting the server or run ``-boosting``
+  BoostingPerks:
+    Title: <a:nitro:788193973432352801> Boosting Perks <a:nitro:788193973432352801>
+    Description: >-
+      You can gain access to the booster portal by boosting our server and gain
+      access to all these awesome perks.
+
+        <:NitroDot:788193934232256513>  Access to be an exclusive beta tester
+        <:NitroDot:788193934232256513>  Exclusive Giveaways and Chats
+        <:NitroDot:788193934232256513>  Access to create Temporary Voice Channels
+        <:NitroDot:788193934232256513> Bonus Coins
+
+      <a:HypeSquad:788234804453179422> Thank You <a:HypeSquad:788234804453179422>
+
+       I would like to thank you up front for taking the time about boosting my server. Boosting my server is a great way to show your appreciation for me and what I do. Unlike reviewing boosting is a monthly way to show your support for me and what I do. 
+  BoostingProfile:
+    Author: "{user-username}'s Boosting Portal"
+    AuthorIcon: https://cdn.discordapp.com/attachments/733403799355523122/788194365176414228/NitroDot.gif
+    Description: |-
+      {user-mention} has been boosting **{guild-name}** for 
+      ``{boosting-length} ``.
+    Thumbnail: "{user-pfp}"
+    Fields:
+      - name: "> Boosting Stats"
+        value: |-2
+           <:NitroDot:788193934232256513> **Started Boosting:** {boosting-start}
+           <:NitroDot:788193934232256513> **Bonus Coins:** {earned-coins} coins
+           <:NitroDot:788193934232256513> **Total Boosts:** {boosting-total}
+  NewBooster:
+    Title: <a:nitro:788193973432352801> New Booster <a:nitro:788193973432352801>
+    Description: "Thank you {user-mention} for boosting {guild-name} reaching a
+      total of **{total-boosts}** boosts!. You have been added to the beta team.
+      You can view all your perks by doing ``.boosting``! "
+  NoLongerBoosting:
+    Author: Sorry To See You Go
+    Description: Thank you {user-mention} for previously boosting {guild-name}.
+      Since you are no-longer boosting this guild your beta key(s) have been
+      revoked. If this was a mistake please open a ticket.
+  BoostingTop:
+    Author: Booster Top (Page {current-page}/{max-pages})
+    AuthorIcon: https://cdn.discordapp.com/attachments/733403799355523122/788194365176414228/NitroDot.gif
+    Description: "{boosters}"
+    Footer: "{total-boosters} Total Boosters | {total-boosts} Total Boosts"
+    BoosterTopTemplate: |
+      **{index-hashtag}** {user-mention} - ({boosting-date})
+    # Avaiable Placeholders: {index} {index-hashtag} {index-period}
+    # {user-mention} {user-id} {boosting-time} {boosting-date}
+    Emojis:
+      "1": 🥇
+      "2": 🥈
+      "3": 🥉
